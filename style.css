@@ -1,0 +1,125 @@
+body{
+    text-align: center;
+    background:black;
+  }
+
+.text{
+    position: relative;
+    width: 50%;
+    height: 10vh;
+    left: 25%;
+    background: transparent;
+
+}
+
+.text h1{
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+.atom{
+    position:relative;
+    width:300px;
+    height: 300px;
+    display:inline-block;
+    margin: 10px auto;
+  }
+
+  .nucleus{
+    background:#2196F3;
+    box-shadow: 0 0 15px #2196F3;
+    animation:shining 2s infinite;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    margin: auto;
+  }
+    
+    .orbit{
+        
+        width:200px;
+        height:200px;
+        transform-style: preserve-3d;
+        animation:orbitlines 1.5s infinite;
+        border: 1px solid purple;
+        position:absolute;
+        border-radius:50%;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin: auto;
+    }
+
+    .electron{
+        position: relative;
+        top: 95px;
+        width:10px;
+        height:10px;
+        background:#FF9800;
+        box-shadow: 0 0 15px #FF9800;
+        border-radius:50%;
+        animation:electron-animation 3s infinite linear;
+        margin: auto;
+    }
+
+    #e1{
+        animation-delay:-1s;
+    
+    }
+    
+    #e2{
+        animation-duration:2.5s;
+    }
+
+
+    .orbit:nth-child(2){
+        transform: rotateY(65deg) rotateX(-54deg);
+        
+    }
+    
+    .orbit:nth-child(3){
+        transform:rotateY(65deg) rotateX(54deg);
+    }
+    
+    .orbit:nth-child(4){
+        transform:rotateY(65deg) rotateX(5deg);
+        
+    }
+
+
+    
+    @keyframes orbitlines {
+        0% {
+         border-top: 1px solid rgba(255, 255, 255, 0.5);}
+        35% {
+            border-right: 1px solid rgba(255,255,255,0.5);}
+        70% {
+            border-bottom: 1px solid rgba(255,255,255,0.5);}
+        100% {
+            border-left: 1px solid rgba(255,255,255,0.5);}
+    }
+    
+    @keyframes shining{ 
+        0% {
+        box-shadow: 0 0 0 transparent;
+        } 50% { 
+        box-shadow: 0 0 30px #2196F3;
+        } 100% { 
+        box-shadow: 0 0 0 transparent;
+        }
+    }
+
+
+    @keyframes electron-animation {
+        0% { transform: rotateX(0deg)  translateX(100px) rotateZ(360deg) rotateY(-65deg);}
+        100% { transform: rotateZ(360deg) translateX(100px) rotateX(0deg) rotateY(-65deg);}
+        
+    }
